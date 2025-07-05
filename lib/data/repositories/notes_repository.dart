@@ -18,10 +18,10 @@ class NotesRepository implements NotesRepositoryInterface {
       final notes = querySnapshot.docs
           .map((doc) => NoteModel.fromFirestore(doc))
           .toList();
-      
+
       // Sort in memory by updatedAt descending
       notes.sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
-      
+
       return notes;
     } catch (e) {
       throw Exception('Failed to fetch notes: $e');

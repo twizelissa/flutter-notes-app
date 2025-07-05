@@ -13,13 +13,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<AuthSignInRequested>(_onAuthSignInRequested);
     on<AuthSignUpRequested>(_onAuthSignUpRequested);
     on<AuthSignOutRequested>(_onAuthSignOutRequested);
+    on<AuthUserChanged>(_onAuthUserChanged);
 
     // Listen to auth state changes
     _authRepository.authStateChanges.listen((user) {
       if (user != null) {
-        emit(AuthAuthenticated(user));
+        add(AuthUserChanged(user));
       } else {
-        emit(AuthUnauthenticated());
+        add(AuthUserChanged(null));
       }
     });
   }
@@ -74,6 +75,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       emit(AuthUnauthenticated());
     } catch (e) {
       emit(AuthError(e.toString()));
+    }
+  }
+
+  void _onAuthUserChanged(AuthUserChanged event, Emitter<AuthState> emit) {
+    if (event.user != null) {
+      emit(AuthAuthenticated(event.user));
+    } else {
+      emit(AuthUnauthenticated());
     }
   }
 }
