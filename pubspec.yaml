@@ -1,5 +1,8 @@
 name: noteapp
-description: A Flutter notes app with Firebase integration
+description: A modern Flutter notes application with Firebase backend, featuring user authentication and real-time note synchronization.
+homepage: https://github.com/twizelissa/noteapp_new
+repository: https://github.com/twizelissa/noteapp_new
+issue_tracker: https://github.com/twizelissa/noteapp_new/issues
 
 publish_to: 'none'
 
