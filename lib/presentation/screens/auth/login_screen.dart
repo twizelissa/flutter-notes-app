@@ -1,3 +1,11 @@
+/// Authentication Screen
+/// 
+/// Handles both sign-in and sign-up functionality with:
+/// - Form validation for email and password
+/// - Loading states during authentication
+/// - Error handling and user feedback
+/// - Toggle between sign-in and sign-up modes
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/utils/validators.dart';

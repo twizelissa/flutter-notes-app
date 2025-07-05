@@ -1,3 +1,14 @@
+/// Flutter Notes App
+/// 
+/// A modern notes application with Firebase backend featuring:
+/// - User authentication with Firebase Auth
+/// - Real-time note synchronization with Cloud Firestore
+/// - Clean Architecture with BLoC state management
+/// - Cross-platform support (Android, iOS, Web, Desktop)
+/// 
+/// Author: twizelissa
+/// Email: twizelissa@gmail.com
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'data/repositories/auth_repository.dart';
